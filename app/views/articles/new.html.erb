@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>New Article</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  </head>
+
+  <body class="prose mx-auto">
+    <div class="">
+    <h1>New Article</h1>
+
+    <%= render "form", article: @article %> 
+    </div>
+  </body>
+</html>

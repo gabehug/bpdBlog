@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Blog</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  </head>
+
+  <body class="prose mx-auto">
+    <div class="">
+    <h1>Blog Articles</h1>
+
+    <ul>
+      <% @articles.each do |article| %>
+        <li>
+        <%= link_to article.title, article %>
+          
+        </li>
+        <% end %>
+    </ul>
+    <%= link_to "New Article", new_article_path %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Article Form</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  </head>
+
+  <body class="prose mx-auto">
+    <div class="">
+    <%= form_with model: article do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %><br>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit "Save Article", class: "bg-gray-100 px-4 py-2 rounded hover:bg-gray-300" %>
+    <%= link_to "Go back", articles_path, class: "px-4 py-2 hover:text-teal-700" %>
+  </div>
+<% end %>
+    
+    </div>
+  </body>
+</html>
